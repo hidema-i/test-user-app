@@ -8,15 +8,27 @@ import {
 import { memo } from "react";
 
 export const MenuDrawer = memo((props) => {
-  const { onClose, isOpen } = props;
+  const {
+    onClose,
+    isOpen,
+    onClickHome,
+    onClickUserManagement,
+    onClickSetting,
+  } = props;
   return (
     <Drawer placement="left" size={"xs"} onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay>
         <DrawerContent>
           <DrawerBody p={0} bg="gray.100">
-            <Button w={"100%"}>TOP</Button>
-            <Button w={"100%"}>User一覧</Button>
-            <Button w={"100%"}>設定</Button>
+            <Button w={"100%"} onClick={onClickHome}>
+              TOP
+            </Button>
+            <Button w={"100%"} onClick={onClickUserManagement}>
+              User一覧
+            </Button>
+            <Button w={"100%"} onClick={onClickSetting}>
+              設定
+            </Button>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
